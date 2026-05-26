@@ -1,5 +1,6 @@
-# Deploy static site to GitHub Pages on every push to main.
-# After merge: Settings → Pages → Source = "GitHub Actions" (not "Deploy from branch").
+# Build on main → publish to gh-pages branch.
+# Works with Settings → Pages → "Deploy from branch" → gh-pages / (root).
+# No "GitHub Actions" Pages source required (avoids queue / environment issues).
 
 name: Deploy Pages
 
@@ -9,39 +10,34 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
-  pages: write
-  id-token: write
+  contents: write
 
 concurrency:
-  group: pages
+  group: deploy-gh-pages
   cancel-in-progress: true
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
       - name: Prepare static site
+        shell: bash
         run: |
-          mkdir _site
+          set -euo pipefail
+          mkdir -p _site
           cp index.html workflow-demo.html CNAME _site/
           cp -r platform pages _site/
-          if [ -f .nojekyll ]; then cp .nojekyll _site/; else touch _site/.nojekyll; fi
+          touch _site/.nojekyll
+          echo "Site files:"
+          find _site -maxdepth 2 -type f | head -30
 
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
-
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+      - name: Deploy to gh-pages branch
+        uses: peaceiris/actions-gh-pages@v4
         with:
-          path: _site
-
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./_site
+          publish_branch: gh-pages
+          commit_message: "deploy: ${{ github.sha }}"
