@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>REVA — Demo Hub</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#0a1628;color:#e2e8f0;line-height:1.6;min-height:100vh}
+a{color:inherit;text-decoration:none}
+:root{--green:#059669;--green-mid:#34d399;--border:#1e3a5f;--card:#0d1b2e;--txt2:#94a3b8}
+.wrap{max-width:960px;margin:0 auto;padding:48px 24px 64px}
+header{text-align:center;margin-bottom:48px}
+header .dot{display:inline-block;width:10px;height:10px;border-radius:50%;background:var(--green);margin-right:8px}
+header h1{font-size:2.2rem;font-weight:900;color:#fff;margin:12px 0 8px}
+header h1 span{color:var(--green-mid)}
+header p{color:var(--txt2);font-size:.95rem;max-width:520px;margin:0 auto}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+.card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:28px;display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s,border-color .2s}
+.card:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(0,0,0,.35);border-color:var(--green)}
+.card.featured{border-top:3px solid var(--green)}
+.card.erp{border-top:3px solid #f59e0b}
+.card.tech{border-top:3px solid #6366f1}
+.card-icon{font-size:2rem;margin-bottom:12px}
+.card h2{font-size:1.15rem;font-weight:800;color:#fff;margin-bottom:8px}
+.card p{font-size:.82rem;color:var(--txt2);flex:1;margin-bottom:18px}
+.card .btn{display:inline-block;padding:10px 18px;background:var(--green);color:#fff;border-radius:8px;font-size:.8rem;font-weight:700;text-align:center}
+.card .btn.outline{background:transparent;border:1px solid var(--border);color:var(--green-mid)}
+.lang{position:fixed;top:16px;right:16px;display:flex;gap:6px;z-index:10}
+.lang button{padding:6px 14px;border-radius:999px;border:1px solid var(--border);background:var(--card);color:var(--txt2);font-size:.75rem;font-weight:600;cursor:pointer}
+.lang button.active{background:var(--green);color:#fff;border-color:var(--green)}
+footer{text-align:center;margin-top:48px;font-size:.75rem;color:#64748b}
+footer a{color:var(--green-mid)}
+</style>
+</head>
+<body>
+<div class="lang">
+  <button class="lang-btn active" onclick="setLang('vi')">VI</button>
+  <button class="lang-btn" onclick="setLang('en')">EN</button>
+</div>
+<div class="wrap">
+  <header>
+    <div><span class="dot"></span><strong style="color:var(--green-mid)">REVA · Foodmart</strong></div>
+    <h1 class="vi">Trung tâm <span>Demo</span></h1>
+    <h1 class="en" style="display:none">Demo <span>Hub</span></h1>
+    <p class="vi">Chọn khu vực: pitch nền tảng bán lẻ, tài liệu kỹ thuật, hoặc kế hoạch ERP / Phase.</p>
+    <p class="en" style="display:none">Choose: retail platform pitch, technical docs, or ERP gap &amp; phase plan.</p>
+  </header>
+  <div class="grid">
+    <article class="card featured">
+      <div class="card-icon">🏪</div>
+      <h2><span class="vi">REVA Platform</span><span class="en" style="display:none">REVA Platform</span></h2>
+      <p class="vi">Pitch khách hàng: bài toán, giải pháp, hành trình người dùng, lộ trình 3 phase, FAQ.</p>
+      <p class="en" style="display:none">Customer pitch: problem, solution, journeys, roadmap, FAQ.</p>
+      <a href="platform/index.html" class="btn"><span class="vi">Mở pitch →</span><span class="en" style="display:none">Open pitch →</span></a>
+    </article>
+    <article class="card tech">
+      <div class="card-icon">⚙️</div>
+      <h2><span class="vi">Workflow kỹ thuật</span><span class="en" style="display:none">Technical workflow</span></h2>
+      <p class="vi">Kiến trúc microservice, event-job, luồng đặt hàng tương tác, bảo mật.</p>
+      <p class="en" style="display:none">Microservices, event-job, interactive order flow, security.</p>
+      <a href="platform/workflow-demo.html" class="btn"><span class="vi">Xem workflow →</span><span class="en" style="display:none">View workflow →</span></a>
+    </article>
+    <article class="card erp">
+      <div class="card-icon">📊</div>
+      <h2><span class="vi">ERP Gap &amp; Phase</span><span class="en" style="display:none">ERP Gap &amp; Phase</span></h2>
+      <p class="vi">Phân tích gap Linm ERP, demo chứng từ, Phase 1 (ERP + Web/Mobile), Phase 2 gọi vốn.</p>
+      <p class="en" style="display:none">Linm ERP gap, demo script, Phase 1–2 delivery plan.</p>
+      <a href="pages/index.html" class="btn" style="margin-bottom:8px"><span class="vi">Tổng quan ERP →</span><span class="en" style="display:none">ERP overview →</span></a>
+      <a href="pages/demo.html" class="btn outline"><span class="vi">Demo ERP →</span><span class="en" style="display:none">ERP demo →</span></a>
+    </article>
+  </div>
+  <footer>
+    <p>reva.linm-soft.com · Linm · 2026-05-26</p>
+    <p style="margin-top:6px">
+      <a href="platform/docs/context/01-PLATFORM-OVERVIEW.md"><span class="vi">Context docs</span><span class="en" style="display:none">Context docs</span></a>
+    </p>
+  </footer>
+</div>
+<script>
+function setLang(lang) {
+  document.querySelectorAll('.lang-btn').forEach(b =>
+    b.classList.toggle('active', b.textContent.trim().toUpperCase() === lang.toUpperCase()));
+  document.querySelectorAll('.vi').forEach(el => el.style.display = lang === 'vi' ? '' : 'none');
+  document.querySelectorAll('.en').forEach(el => el.style.display = lang === 'en' ? '' : 'none');
+  document.documentElement.lang = lang;
+}
+</script>
+</body>
+</html>

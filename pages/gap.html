@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>REVA ERP — Phân tích Gap</title>
+<link rel="stylesheet" href="plan.css">
+</head>
+<body>
+
+<nav class="plan-nav">
+  <a href="index.html" class="nav-logo"><div class="dot"></div> REVA ERP Plan</a>
+  <div class="nav-links">
+    <a href="index.html"><span class="vi">Tổng quan</span><span class="en" style="display:none">Overview</span></a>
+    <a href="gap.html" class="active"><span class="vi">Gap</span><span class="en" style="display:none">Gap</span></a>
+    <a href="demo.html"><span class="vi">Demo</span><span class="en" style="display:none">Demo</span></a>
+    <a href="phase1.html"><span class="vi">Phase 1</span><span class="en" style="display:none">Phase 1</span></a>
+    <a href="phase2.html"><span class="vi">Phase 2</span><span class="en" style="display:none">Phase 2</span></a>
+  </div>
+  <div class="nav-right">
+    <a href="index.html" class="nav-back">← <span class="vi">Tổng quan</span><span class="en" style="display:none">Overview</span></a>
+    <button class="lang-btn active" onclick="setLang('vi')">VI</button>
+    <button class="lang-btn" onclick="setLang('en')">EN</button>
+  </div>
+</nav>
+
+<div class="hero compact">
+  <div class="hero-badge"><span class="vi">1 · Phân tích Gap</span><span class="en" style="display:none">1 · Gap analysis</span></div>
+  <h1 class="vi">Yêu cầu khách hàng vs <span>Linm ERP</span></h1>
+  <h1 class="en" style="display:none">Customer requirements vs <span>Linm ERP</span></h1>
+  <p class="vi">Nguồn: <code>Phan-tich-ERP/</code>, <code>phase1/</code>. Multi-tenant qua <code>companyId</code> — không thêm <code>branchId</code>.</p>
+  <p class="en" style="display:none">Sources: Phan-tich-ERP/, phase1/. Multi-tenancy via companyId — no branchId.</p>
+</div>
+
+<main>
+  <section class="page-section">
+    <div class="map-box">
+      <strong><span class="vi">Ánh xạ REVA → Linm ERP (multi-tenant)</span><span class="en" style="display:none">REVA → Linm ERP mapping</span></strong>
+      <table>
+        <tr><td><span class="vi">Chi nhánh / cửa hàng</span><span class="en" style="display:none">Branch / store</span></td><td><strong><code>companyId</code></strong> · <span class="vi">Đơn vị cơ sở</span><span class="en" style="display:none">Company</span></td></tr>
+        <tr><td><span class="vi">Cô lập dữ liệu</span><span class="en" style="display:none">Isolation</span></td><td><code>TenantEntity</code> · JWT <code>company_id</code></td></tr>
+        <tr><td><span class="vi">Phòng ban</span><span class="en" style="display:none">Department</span></td><td><strong><code>departmentId</code></strong></td></tr>
+        <tr><td><span class="vi">Đổi cửa hàng</span><span class="en" style="display:none">Switch store</span></td><td><code>SwitchCompanyModal</code></td></tr>
+      </table>
+    </div>
+
+    <div class="summary-grid">
+      <div class="sum-card"><div class="n ok">~75%</div><div class="l vi">Chứng từ KT cốt lõi</div><div class="l en" style="display:none">Core finance vouchers</div></div>
+      <div class="sum-card"><div class="n warn">~20%</div><div class="l vi">P&amp;L theo đơn vị cơ sở</div><div class="l en" style="display:none">P&amp;L per tenant</div></div>
+      <div class="sum-card"><div class="n warn">~40%</div><div class="l vi">Báo cáo retail KPI</div><div class="l en" style="display:none">Retail KPI reports</div></div>
+      <div class="sum-card"><div class="n warn">0%</div><div class="l vi">Phiếu kết ca POS</div><div class="l en" style="display:none">POS closing voucher</div></div>
+    </div>
+
+    <table class="gap-table">
+      <thead>
+        <tr>
+          <th><span class="vi">Hạng mục</span><span class="en" style="display:none">Area</span></th>
+          <th><span class="vi">Yêu cầu REVA</span><span class="en" style="display:none">REVA requirement</span></th>
+          <th><span class="vi">Linm ERP hiện tại</span><span class="en" style="display:none">Linm ERP today</span></th>
+          <th>Gap / Phase</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong><span class="vi">Phiếu Thu / Chi</span><span class="en" style="display:none">Receipt / Payment</span></strong></td>
+          <td><code>companyId</code>, <code>channelCode</code>, TK 113x</td>
+          <td><span class="vi">Có PT/PC — chưa map kênh / tenant REVA</span><span class="en" style="display:none">PT/PC — no REVA channel/tenant map</span></td>
+          <td><span class="badge p1">P1.1 · P1.2</span></td>
+        </tr>
+        <tr>
+          <td><strong><span class="vi">Phiếu Kết Ca</span><span class="en" style="display:none">Store closing</span></strong></td>
+          <td><span class="vi">Đóng ca, đối soát TM/POS/Momo</span><span class="en" style="display:none">Daily close, reconcile</span></td>
+          <td><span class="badge no"><span class="vi">Chưa có</span><span class="en" style="display:none">Missing</span></span></td>
+          <td><span class="badge p1">P1.4</span></td>
+        </tr>
+        <tr>
+          <td><strong><span class="vi">Danh mục TK</span><span class="en" style="display:none">COA</span></strong></td>
+          <td>150+ TK REVA</td>
+          <td><span class="vi">/dm/tai-khoan — chưa import REVA</span><span class="en" style="display:none">/dm/tai-khoan — REVA set not imported</span></td>
+          <td><span class="badge p1">P1.3</span></td>
+        </tr>
+        <tr>
+          <td><strong>Multi-tenant</strong></td>
+          <td>FM02–FM09 + HO</td>
+          <td><span class="badge partial"><span class="vi">DonViCoSoPage — chưa seed REVA</span><span class="en" style="display:none">Not configured for REVA</span></span></td>
+          <td><span class="badge p1">P1.1</span></td>
+        </tr>
+        <tr>
+          <td><strong><span class="vi">Nạp Ví</span><span class="en" style="display:none">Wallet top-up</span></strong></td>
+          <td>Nợ 111/113 → Có 312</td>
+          <td><span class="vi">PT thường</span><span class="en" style="display:none">Standard receipt</span></td>
+          <td><span class="badge p1">P1.5</span></td>
+        </tr>
+        <tr>
+          <td><strong>GRIR</strong></td>
+          <td>3319100001</td>
+          <td><span class="vi">Luồng mua có — chưa GRIR</span><span class="en" style="display:none">Purchase flow — no GRIR</span></td>
+          <td><span class="badge p1">P1.6</span></td>
+        </tr>
+        <tr>
+          <td><strong><span class="vi">Báo cáo P&amp;L</span><span class="en" style="display:none">Store P&amp;L</span></strong></td>
+          <td><span class="vi">Theo CH, kênh, NĐT</span><span class="en" style="display:none">By store, channel, investor</span></td>
+          <td>B01/B02 per <code>company_id</code></td>
+          <td><span class="badge partial"><span class="vi">Phase 2 (~2 tuần)</span><span class="en" style="display:none">Phase 2 (~2 wks)</span></span></td>
+        </tr>
+        <tr>
+          <td><strong><span class="vi">Web/Mobile end-user</span><span class="en" style="display:none">End-user apps</span></strong></td>
+          <td><span class="vi">Số dư membership, đặt/mua hàng, event Bữa cơm nhà</span><span class="en" style="display:none">Membership balance, orders, Home Meal event</span></td>
+          <td><span class="badge no"><span class="vi">Chưa có app KH</span><span class="en" style="display:none">No customer app</span></span></td>
+          <td><span class="badge p1"><span class="vi">Phase 1 · 60 ngày</span><span class="en" style="display:none">Phase 1 · 60 days</span></span></td>
+        </tr>
+        <tr>
+          <td><strong>Loyalty</strong></td>
+          <td><span class="vi">Ví 3 ngăn, 274 thẻ</span><span class="en" style="display:none">3-wallet, 274 cards</span></td>
+          <td><span class="badge no"><span class="vi">Chưa module</span><span class="en" style="display:none">No module</span></span></td>
+          <td>Phase 4–6</td>
+        </tr>
+        <tr>
+          <td><strong>POS</strong></td>
+          <td><span class="vi">Push DT ca → ERP</span><span class="en" style="display:none">Shift sales sync</span></td>
+          <td><span class="badge no"><span class="vi">Chưa API</span><span class="en" style="display:none">No API</span></span></td>
+          <td><span class="vi">Phase 1 import/API</span><span class="en" style="display:none">Phase 1 import/API</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p style="margin-top:20px;font-size:.82rem;color:var(--txt2)">
+      <span class="vi"><strong>3 blocker phase1:</strong> chưa tách cửa hàng thành đơn vị cơ sở; không Phiếu Kết Ca; không mapping kênh TT. <em>Không cần branchId.</em></span>
+      <span class="en" style="display:none"><strong>3 blockers:</strong> stores not as tenants; no store closing; no channel mapping. <em>No branchId needed.</em></span>
+    </p>
+    <p style="margin-top:24px"><a href="phase1.html" class="btn-primary" style="display:inline-block"><span class="vi">Lộ trình Phase 1 →</span><span class="en" style="display:none">Phase 1 plan →</span></a></p>
+  </section>
+</main>
+
+<footer class="plan-footer"><a href="index.html">← pages/index.html</a></footer>
+<script src="plan.js"></script>
+</body>
+</html>

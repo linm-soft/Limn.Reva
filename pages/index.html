@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>REVA ERP — Kế hoạch Gap &amp; Demo (Tổng quan)</title>
+<link rel="stylesheet" href="plan.css">
+</head>
+<body>
+
+<nav class="plan-nav">
+  <a href="index.html" class="nav-logo"><div class="dot"></div> REVA ERP Plan</a>
+  <div class="nav-links">
+    <a href="index.html" class="active"><span class="vi">Tổng quan</span><span class="en" style="display:none">Overview</span></a>
+    <a href="gap.html"><span class="vi">Gap</span><span class="en" style="display:none">Gap</span></a>
+    <a href="demo.html"><span class="vi">Demo</span><span class="en" style="display:none">Demo</span></a>
+    <a href="phase1.html"><span class="vi">Phase 1</span><span class="en" style="display:none">Phase 1</span></a>
+    <a href="phase2.html"><span class="vi">Phase 2</span><span class="en" style="display:none">Phase 2</span></a>
+  </div>
+  <div class="nav-right">
+    <a href="../platform/index.html" class="nav-back">← Pitch</a>
+    <button class="lang-btn active" onclick="setLang('vi')">VI</button>
+    <button class="lang-btn" onclick="setLang('en')">EN</button>
+  </div>
+</nav>
+
+<div class="hero compact">
+  <div class="hero-badge">
+    <span class="vi">Foodmart / REVA · Gap · Demo · Phase 1–2 · 2026-05-26</span>
+    <span class="en" style="display:none">Foodmart / REVA · Gap · Demo · Phase 1–2 · 2026-05-26</span>
+  </div>
+  <h1 class="vi">Kế hoạch <span>ERP &amp; Kênh End-user</span></h1>
+  <h1 class="en" style="display:none"><span>ERP &amp; End-user</span> delivery plan</h1>
+  <p class="vi">Trang tổng quan — chi tiết từng phần ở các trang riêng. <strong>Phase 1</strong> chạy song song: ERP (4 tuần) + Web/Mobile end-user (60 ngày).</p>
+  <p class="en" style="display:none">Summary hub — details on separate pages. <strong>Phase 1</strong> runs in parallel: ERP (4 weeks) + end-user Web/Mobile (60 days).</p>
+  <div class="hero-actions">
+    <a href="demo.html" class="btn-primary">
+      <span class="vi">🎯 Xem Demo ERP</span><span class="en" style="display:none">🎯 ERP Demo Plan</span>
+    </a>
+    <a href="gap.html" class="btn-outline">
+      <span class="vi">Bảng Gap</span><span class="en" style="display:none">Gap Table</span>
+    </a>
+    <a href="../platform/index.html" class="btn-outline">
+      <span class="vi">← Pitch REVA</span><span class="en" style="display:none">← REVA Pitch</span>
+    </a>
+  </div>
+  <div class="hero-stats">
+    <div class="hero-stat"><div class="val">4</div><div class="lbl vi">tuần ERP P1</div><div class="lbl en" style="display:none">weeks ERP P1</div></div>
+    <div class="hero-stat"><div class="val">60</div><div class="lbl vi">ngày Web + Mobile</div><div class="lbl en" style="display:none">days Web + Mobile</div></div>
+    <div class="hero-stat"><div class="val">2</div><div class="lbl vi">tuần Phase 2 BC</div><div class="lbl en" style="display:none">weeks Phase 2</div></div>
+    <div class="hero-stat"><div class="val">138</div><div class="lbl vi">trang ERP demo</div><div class="lbl en" style="display:none">ERP pages (demo)</div></div>
+  </div>
+</div>
+
+<main>
+  <section class="page-section">
+    <div class="section-tag"><span class="vi">Lộ trình song song</span><span class="en" style="display:none">Parallel tracks</span></div>
+    <h2 class="section-title vi">Phase 1 — <span>3 luồng</span> cùng lúc</h2>
+    <h2 class="section-title en" style="display:none">Phase 1 — <span>3 parallel</span> tracks</h2>
+    <p class="section-sub vi" style="margin-bottom:0">Thanh thời gian theo <strong>60 ngày</strong> (chuẩn hóa): ERP ~28 ngày (4 tuần) chạy song song với Web/Mobile.</p>
+    <p class="section-sub en" style="display:none;margin-bottom:0">Timeline on a <strong>60-day</strong> scale: ERP ~28 days (4 weeks) runs parallel to Web/Mobile.</p>
+
+    <div class="gantt-board" role="img" aria-label="Phase 1 parallel timeline">
+      <div class="gantt-legend">
+        <span><i class="c-erp-base"></i><span class="vi">ERP Base (tuần 1–2)</span><span class="en" style="display:none">ERP base (wks 1–2)</span></span>
+        <span><i class="c-erp-bc"></i><span class="vi">ERP BC gọi vốn (tuần 3–4)</span><span class="en" style="display:none">ERP fundraising reports (wks 3–4)</span></span>
+        <span><i class="c-web"></i> Web App</span>
+        <span><i class="c-mobile"></i><span class="vi">Android + iOS</span><span class="en" style="display:none">Android + iOS</span></span>
+        <span><i class="c-static"></i><span class="vi">Bữa cơm nhà (static)</span><span class="en" style="display:none">Home Meal (static)</span></span>
+        <span><i class="c-p2"></i> Phase 2</span>
+      </div>
+
+      <div class="gantt-grid">
+        <div class="gantt-axis-label"><span class="vi">Trục thời gian</span><span class="en" style="display:none">Time axis</span></div>
+        <div class="gantt-axis-wrap">
+          <div class="gantt-axis-line"></div>
+          <span class="gantt-tick major" style="left:0%"><span class="vi">Ngày 1</span><span class="en" style="display:none">Day 1</span></span>
+          <span class="gantt-tick erp-zone" style="left:23.33%"><span class="vi">Tuần 2</span><span class="en" style="display:none">Wk 2</span></span>
+          <span class="gantt-tick erp-zone major" style="left:46.67%"><span class="vi">Tuần 4 · ERP</span><span class="en" style="display:none">Wk 4 · ERP</span></span>
+          <span class="gantt-tick" style="left:50%">D30</span>
+          <span class="gantt-tick major" style="left:100%"><span class="vi">Ngày 60</span><span class="en" style="display:none">Day 60</span></span>
+        </div>
+
+        <div class="gantt-row-label">
+          <span class="vi">Luồng ERP</span><span class="en" style="display:none">ERP track</span>
+          <small>4 <span class="vi">tuần</span><span class="en" style="display:none">weeks</span></small>
+        </div>
+        <div class="gantt-track">
+          <div class="gantt-erp-marker" title="End of ERP sprint (week 4)"></div>
+          <div class="gantt-bar erp-base" title="POS ≥ 01/01/2026 · multi-tenant · kết ca · COA">
+            <span class="gantt-bar-inner"><span class="vi">ERP Base</span><span class="en" style="display:none">ERP base</span></span>
+          </div>
+          <div class="gantt-bar erp-bc" title="Báo cáo từ số vận hành ERP">
+            <span class="gantt-bar-inner"><span class="vi">BC gọi vốn</span><span class="en" style="display:none">Fundraise Rpt</span></span>
+          </div>
+        </div>
+
+        <div class="gantt-row-label">
+          Web App
+          <small>60 <span class="vi">ngày</span><span class="en" style="display:none">days</span></small>
+        </div>
+        <div class="gantt-track">
+          <div class="gantt-bar web">
+            <span class="gantt-bar-inner"><span class="vi">Membership · đặt hàng · mua hàng</span><span class="en" style="display:none">Membership · order · purchase</span></span>
+          </div>
+        </div>
+
+        <div class="gantt-row-label">
+          <span class="vi">Android + iOS</span><span class="en" style="display:none">Android + iOS</span>
+          <small><span class="vi">cùng scope Web</span><span class="en" style="display:none">same as Web</span></small>
+        </div>
+        <div class="gantt-track">
+          <div class="gantt-bar mobile">
+            <span class="gantt-bar-inner"><span class="vi">App end-user · push · deep link</span><span class="en" style="display:none">Customer app · push · deep link</span></span>
+          </div>
+        </div>
+
+        <div class="gantt-row-label">
+          <span class="vi">Bữa cơm nhà</span><span class="en" style="display:none">Home Meal</span>
+          <small><span class="vi">static / SEO</span><span class="en" style="display:none">static / SEO</span></small>
+        </div>
+        <div class="gantt-track">
+          <div class="gantt-bar static">
+            <span class="gantt-bar-inner"><span class="vi">Landing v1</span><span class="en" style="display:none">Landing v1</span></span>
+          </div>
+          <div class="gantt-bar static-ext" aria-hidden="true"></div>
+        </div>
+
+        <div class="gantt-row-label">
+          Phase 2
+          <small>~2 <span class="vi">tuần</span><span class="en" style="display:none">weeks</span></small>
+        </div>
+        <div class="gantt-track">
+          <div class="gantt-bar p2">
+            <span class="gantt-bar-inner"><span class="vi">BC 2023–25 · Dashboard NĐT</span><span class="en" style="display:none">2023–25 · Investor dash</span></span>
+          </div>
+        </div>
+      </div>
+
+      <p class="gantt-hint vi">Di chuột lên từng thanh để xem phạm vi · Tỷ lệ: 4 tuần ERP ≈ 47% trên trục 60 ngày</p>
+      <p class="gantt-hint en" style="display:none">Hover bars for scope · 4 ERP weeks ≈ 47% of the 60-day axis</p>
+
+      <div class="gantt-note">
+        <span class="vi"><strong>Phase 2</strong> (~2 tuần, sau hoặc chồng cuối Phase 1): báo cáo lịch sử <strong>2023–2025</strong> + dashboard nhà đầu tư — <em>dữ liệu sẵn có</em>, không migration lại. Chi tiết: <a href="phase2.html">phase2.html</a></span>
+        <span class="en" style="display:none"><strong>Phase 2</strong> (~2 weeks, after or overlapping end of P1): <strong>2023–2025</strong> reports + investor dashboard — <em>existing data</em>, no re-migration. Details: <a href="phase2.html">phase2.html</a></span>
+      </div>
+    </div>
+  </section>
+
+  <section class="page-section">
+    <h2 class="section-title vi">Chi tiết <span>từng phần</span></h2>
+    <h2 class="section-title en" style="display:none">Detail <span>by section</span></h2>
+    <div class="hub-grid">
+      <article class="hub-card featured">
+        <h3>📋 <span class="vi">Phân tích Gap</span><span class="en" style="display:none">Gap analysis</span></h3>
+        <p class="hub-meta vi">~75% chứng từ · multi-tenant · không branchId</p>
+        <p class="hub-meta en" style="display:none">~75% vouchers · multi-tenant · no branchId</p>
+        <p class="vi">Yêu cầu REVA vs Linm ERP: PT/PC, kết ca, P&amp;L, loyalty, POS — gắn P1.x.</p>
+        <p class="en" style="display:none">REVA requirements vs Linm ERP with phase tags.</p>
+        <a href="gap.html" class="btn-link"><span class="vi">Xem bảng Gap →</span><span class="en" style="display:none">View gap table →</span></a>
+      </article>
+      <article class="hub-card">
+        <h3>🎯 <span class="vi">Demo ERP</span><span class="en" style="display:none">ERP demo</span></h3>
+        <p class="hub-meta vi">45–60 phút · không go-live</p>
+        <p class="hub-meta en" style="display:none">45–60 min · not go-live</p>
+        <p class="vi">Chứng từ &amp; UI mượt (~138 trang). Không import POS / BC gọi vốn trong buổi demo.</p>
+        <p class="en" style="display:none">Vouchers &amp; smooth UX. No POS import or fundraising reports in session.</p>
+        <a href="demo.html" class="btn-link"><span class="vi">Kịch bản Demo →</span><span class="en" style="display:none">Demo script →</span></a>
+      </article>
+      <article class="hub-card amber-top">
+        <h3>⚙️ <span class="vi">Phase 1 — Vận hành + End-user</span><span class="en" style="display:none">Phase 1 — Ops + end-user</span></h3>
+        <p class="hub-meta vi">ERP 2+2 tuần · Web/Mobile 60 ngày</p>
+        <p class="hub-meta en" style="display:none">ERP 2+2 weeks · Web/Mobile 60 days</p>
+        <p class="vi">ERP: POS từ 01/01/2026, setup. Web/Mobile: số dư membership, đặt/mua hàng, landing Bữa cơm nhà.</p>
+        <p class="en" style="display:none">ERP setup + POS. Web/Mobile: membership, orders, Home Meal static page.</p>
+        <a href="phase1.html" class="btn-link"><span class="vi">Lộ trình Phase 1 →</span><span class="en" style="display:none">Phase 1 plan →</span></a>
+      </article>
+      <article class="hub-card indigo-top">
+        <h3>📊 <span class="vi">Phase 2 — BC &amp; Gọi vốn</span><span class="en" style="display:none">Phase 2 — Reports &amp; fundraising</span></h3>
+        <p class="hub-meta vi">~2 tuần · data 2023–25 sẵn</p>
+        <p class="hub-meta en" style="display:none">~2 weeks · 2023–25 data exists</p>
+        <p class="vi">12 CH (5 đủ CP, 7 benchmark). Dashboard nhà đầu tư — không migration lại.</p>
+        <p class="en" style="display:none">12 stores, investor dashboard — no re-migration.</p>
+        <a href="phase2.html" class="btn-link"><span class="vi">Chi tiết Phase 2 →</span><span class="en" style="display:none">Phase 2 details →</span></a>
+      </article>
+    </div>
+  </section>
+
+  <section class="page-section">
+    <div class="section-tag"><span class="vi">Tóm tắt lộ trình</span><span class="en" style="display:none">Roadmap summary</span></div>
+    <div class="roadmap">
+      <div class="phase-card p0">
+        <div class="phase-label" style="color:var(--green)">Demo · ngay</div>
+        <h3 style="color:var(--navy)"><span class="vi">ERP cơ bản &amp; UX</span><span class="en" style="display:none">Core ERP &amp; UX</span></h3>
+        <ul>
+          <li><span class="vi">Xem chứng từ, list/form</span><span class="en" style="display:none">Vouchers, lists/forms</span></li>
+          <li><a href="demo.html"><span class="vi">→ demo.html</span><span class="en" style="display:none">→ demo.html</span></a></li>
+        </ul>
+      </div>
+      <div class="phase-card p1">
+        <div class="phase-label">Phase 1</div>
+        <h3><span class="vi">ERP + Web + Mobile</span><span class="en" style="display:none">ERP + Web + Mobile</span></h3>
+        <ul>
+          <li><span class="vi">ERP base 2 tuần + BC 2 tuần</span><span class="en" style="display:none">ERP 2w base + 2w reports</span></li>
+          <li><span class="vi">Web/Mobile 60 ngày song song</span><span class="en" style="display:none">Web/Mobile 60d parallel</span></li>
+          <li><a href="phase1.html" style="color:var(--green-mid)"><span class="vi">→ phase1.html</span><span class="en" style="display:none">→ phase1.html</span></a></li>
+        </ul>
+      </div>
+      <div class="phase-card p2">
+        <div class="phase-label">Phase 2 · ~2 tuần</div>
+        <h3><span class="vi">BC lịch sử + Investor</span><span class="en" style="display:none">Historical + investor</span></h3>
+        <ul>
+          <li><span class="vi">2023–25 · 5+7 CH</span><span class="en" style="display:none">2023–25 · 5+7 stores</span></li>
+          <li><a href="phase2.html"><span class="vi">→ phase2.html</span><span class="en" style="display:none">→ phase2.html</span></a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="cta-box">
+      <h2><span class="vi">Tài liệu nguồn</span><span class="en" style="display:none">Source docs</span></h2>
+      <p><span class="vi"><code>Phan-tich-ERP/</code> · <code>phase1/specs/</code> · <code>reva-erp/01-chung-tu-va-bao-cao.md</code></span><span class="en" style="display:none">Phan-tich-ERP/ · phase1/specs/ · reva-erp plan</span></p>
+      <div class="cta-links">
+        <a href="demo.html" class="primary"><span class="vi">🎯 Demo ERP →</span><span class="en" style="display:none">🎯 ERP Demo →</span></a>
+        <a href="../platform/index.html" class="secondary"><span class="vi">← Pitch REVA</span><span class="en" style="display:none">← REVA pitch</span></a>
+        <a href="../platform/workflow-demo.html" class="secondary"><span class="vi">Workflow kỹ thuật →</span><span class="en" style="display:none">Technical workflow →</span></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="plan-footer">
+  REVA ERP Plan · Linm · 2026-05-26 ·
+  <a href="../index.html">Hub</a> · <a href="../platform/index.html">platform</a>
+</footer>
+<script src="plan.js"></script>
+</body>
+</html>
