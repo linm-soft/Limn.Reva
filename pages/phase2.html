@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>REVA — Phase 2: BC &amp; Dashboard nhà đầu tư</title>
+<link rel="stylesheet" href="plan.css">
+</head>
+<body>
+
+<nav class="plan-nav">
+  <a href="index.html" class="nav-logo"><div class="dot"></div> REVA ERP Plan</a>
+  <div class="nav-links">
+    <a href="index.html"><span class="vi">Tổng quan</span><span class="en" style="display:none">Overview</span></a>
+    <a href="gap.html"><span class="vi">Gap</span><span class="en" style="display:none">Gap</span></a>
+    <a href="demo.html"><span class="vi">Demo</span><span class="en" style="display:none">Demo</span></a>
+    <a href="phase1.html"><span class="vi">Phase 1</span><span class="en" style="display:none">Phase 1</span></a>
+    <a href="phase2.html" class="active"><span class="vi">Phase 2</span><span class="en" style="display:none">Phase 2</span></a>
+  </div>
+  <div class="nav-right">
+    <a href="index.html" class="nav-back">← <span class="vi">Tổng quan</span><span class="en" style="display:none">Overview</span></a>
+    <button class="lang-btn active" onclick="setLang('vi')">VI</button>
+    <button class="lang-btn" onclick="setLang('en')">EN</button>
+  </div>
+</nav>
+
+<div class="hero compact">
+  <div class="hero-badge"><span class="vi">4 · Phase 2 · ~2 tuần</span><span class="en" style="display:none">4 · Phase 2 · ~2 weeks</span></div>
+  <h1 class="vi">Báo cáo <span>2023–2025</span> &amp; Dashboard gọi vốn</h1>
+  <h1 class="en" style="display:none"><span>2023–2025</span> reports &amp; investor dashboard</h1>
+  <p class="vi"><strong>Không migration lại.</strong> Dữ liệu lịch sử đã có — chuẩn hóa → BC chuẩn → dashboard nhà đầu tư.</p>
+  <p class="en" style="display:none"><strong>No re-migration.</strong> Historical data exists — normalize → reports → investor dashboard.</p>
+</div>
+
+<main>
+  <section class="page-section">
+    <div class="challenge-box">
+      <h3>⚠️ <span class="vi">Thách thức — 12 cửa hàng, chất lượng dữ liệu không đồng đều</span><span class="en" style="display:none">Challenge — 12 stores, uneven data</span></h3>
+      <table class="store-matrix">
+        <thead>
+          <tr>
+            <th><span class="vi">Nhóm</span><span class="en" style="display:none">Group</span></th>
+            <th><span class="vi">Số CH</span><span class="en" style="display:none"># Stores</span></th>
+            <th><span class="vi">Doanh thu</span><span class="en" style="display:none">Revenue</span></th>
+            <th><span class="vi">Chi phí</span><span class="en" style="display:none">Expenses</span></th>
+            <th><span class="vi">Xử lý Phase 2</span><span class="en" style="display:none">Phase 2 approach</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="ok">
+            <td><strong><span class="vi">Cửa hàng chuẩn</span><span class="en" style="display:none">Reference stores</span></strong></td>
+            <td><strong>5</strong></td>
+            <td>✅</td><td>✅</td>
+            <td><span class="vi">Benchmark CP/DT, GM%, OPEX</span><span class="en" style="display:none">Benchmark ratios</span></td>
+          </tr>
+          <tr class="partial">
+            <td><strong><span class="vi">Thiếu CP</span><span class="en" style="display:none">Revenue-only</span></strong></td>
+            <td><strong>7</strong></td>
+            <td>✅</td>
+            <td>❌ <span class="vi">Chưa đủ</span><span class="en" style="display:none">Missing</span></td>
+            <td><span class="vi">Ref CP từ CH chuẩn → phân bổ → true-up số tổng GĐ</span><span class="en" style="display:none">Derive from benchmark → true-up to director totals</span></td>
+          </tr>
+        </tbody>
+      </table>
+      <p style="margin-top:14px;font-size:.85rem;color:var(--txt2)"><span class="vi"><strong>Ràng buộc:</strong> GĐ chỉ có số tổng ước lượng — dashboard ghi badge “ước tính (benchmark)” cho 7 CH.</span><span class="en" style="display:none"><strong>Constraint:</strong> Director has group totals only — benchmark badge on 7 stores.</span></p>
+    </div>
+
+    <h3 style="font-size:1rem;font-weight:800;color:var(--navy);margin:24px 0 12px">
+      <span class="vi">Quy trình phân bổ CP (7 CH)</span>
+      <span class="en" style="display:none">Expense allocation (7 stores)</span>
+    </h3>
+    <div class="timeline">
+      <div class="tl-item">
+        <h4><span class="vi">Bước 1 — Chọn CH ref</span><span class="en" style="display:none">Step 1 — Pick benchmark</span></h4>
+        <p><span class="vi">Map CH thiếu CP → 1 trong 5 CH chuẩn cùng mô hình.</span><span class="en" style="display:none">Map to benchmark store same model.</span></p>
+      </div>
+      <div class="tl-item">
+        <h4><span class="vi">Bước 2 — Áp tỷ lệ CP/DT</span><span class="en" style="display:none">Step 2 — Apply ratios</span></h4>
+        <p><span class="vi">GVHB%, OPEX% × DT thực tế → CP ước tính.</span><span class="en" style="display:none">COGS%, OPEX% × actual revenue.</span></p>
+      </div>
+      <div class="tl-item">
+        <h4><span class="vi">Bước 3 — True-up khớp GĐ</span><span class="en" style="display:none">Step 3 — True-up</span></h4>
+        <p><span class="vi">Tổng 12 CH khớp số tổng 2023/24/25.</span><span class="en" style="display:none">Roll-up matches director annual totals.</span></p>
+      </div>
+      <div class="tl-item">
+        <h4><span class="vi">Bước 4 — Hiển thị</span><span class="en" style="display:none">Step 4 — Display</span></h4>
+        <p><span class="vi">Cột Nguồn: Thực tế / Ước tính (ref).</span><span class="en" style="display:none">Source: Actual / Estimated.</span></p>
+      </div>
+    </div>
+
+    <div class="week2-grid" style="margin-top:28px">
+      <div class="sprint-box">
+        <h3><span class="vi">Tuần 1 — Chuẩn hóa</span><span class="en" style="display:none">Week 1 — Normalize</span></h3>
+        <div class="week">D1–D5</div>
+        <ul class="task-list">
+          <li><span class="task-id">D1</span><span class="vi">Inventory 12 CH × 3 năm</span><span class="en" style="display:none">12 stores × 3 years inventory</span></li>
+          <li><span class="task-id">D2</span><span class="vi">Map ref + tỷ lệ benchmark</span><span class="en" style="display:none">Benchmark mapping</span></li>
+          <li><span class="task-id">D3</span><span class="vi">Phân bổ + true-up GĐ</span><span class="en" style="display:none">Allocate + true-up</span></li>
+          <li><span class="task-id">D4</span><span class="vi">Store_PnL chuẩn</span><span class="en" style="display:none">Standard Store_PnL</span></li>
+          <li><span class="task-id">D5</span><span class="vi">Review kế toán / GĐ</span><span class="en" style="display:none">Finance / director review</span></li>
+        </ul>
+      </div>
+      <div class="sprint-box">
+        <h3><span class="vi">Tuần 2 — BC &amp; Dashboard</span><span class="en" style="display:none">Week 2 — Reports &amp; dashboard</span></h3>
+        <div class="week">D6–D10</div>
+        <ul class="task-list">
+          <li><span class="task-id">D6</span><span class="vi">BCTC tổng hợp 2023–25</span><span class="en" style="display:none">Consolidated 2023–25</span></li>
+          <li><span class="task-id">D7</span><span class="vi">Dashboard investor v1</span><span class="en" style="display:none">Investor dashboard v1</span></li>
+          <li><span class="task-id">D8</span><span class="vi">Unit economics 12 CH</span><span class="en" style="display:none">Unit economics</span></li>
+          <li><span class="task-id">D9</span><span class="vi">Slide deck gọi vốn</span><span class="en" style="display:none">Fundraising deck</span></li>
+          <li><span class="task-id">D10</span><span class="vi">UAT GĐ / nhà đầu tư</span><span class="en" style="display:none">UAT with investors</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <table class="deliver-table" style="margin-top:28px">
+      <thead>
+        <tr>
+          <th>Deliverable</th>
+          <th><span class="vi">Năm</span><span class="en" style="display:none">Years</span></th>
+          <th><span class="vi">Ghi chú</span><span class="en" style="display:none">Notes</span></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Store P&amp;L</td>
+          <td>2023–2025</td>
+          <td><span class="vi">5 thực tế + 7 ước tính</span><span class="en" style="display:none">5 actual + 7 estimated</span></td>
+        </tr>
+        <tr>
+          <td><span class="vi">P&amp;L tổng hợp</span><span class="en" style="display:none">Consolidated P&amp;L</span></td>
+          <td>2023–2025</td>
+          <td><span class="vi">Khớp số tổng GĐ</span><span class="en" style="display:none">Matches director totals</span></td>
+        </tr>
+        <tr>
+          <td><span class="vi">Dashboard nhà đầu tư</span><span class="en" style="display:none">Investor dashboard</span></td>
+          <td>—</td>
+          <td><span class="vi">Trend, GM%, Actual vs Est.</span><span class="en" style="display:none">Trend, GM%, Actual vs Est.</span></td>
+        </tr>
+        <tr>
+          <td><span class="vi">Gói gọi vốn</span><span class="en" style="display:none">Fundraising pack</span></td>
+          <td>—</td>
+          <td><span class="vi">PDF / link — không cần ERP go-live đầy đủ</span><span class="en" style="display:none">PDF / link — full ERP go-live not required</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3 style="margin-top:32px;font-size:1rem;font-weight:800;color:var(--navy)">
+      <span class="vi">Dashboard nhà đầu tư</span>
+      <span class="en" style="display:none">Investor dashboard</span>
+    </h3>
+    <p style="font-size:.88rem;color:var(--txt2);margin-bottom:16px"><span class="vi">Theo <code>02-bao-cao-quan-tri.md</code> — trình bày quản trị, không thay sổ pháp lý.</span><span class="en" style="display:none">Management presentation — not statutory books.</span></p>
+    <div class="investor-grid">
+      <div class="inv-card">
+        <h4>📈 <span class="vi">Tổng quan 2023→2025</span><span class="en" style="display:none">Overview 2023→2025</span></h4>
+        <p><span class="vi">DT, GP, OPEX, NP — YoY %</span><span class="en" style="display:none">Revenue, GP, OPEX, NP — YoY</span></p>
+      </div>
+      <div class="inv-card">
+        <h4>🏪 <span class="vi">Ma trận 12 CH</span><span class="en" style="display:none">12-store matrix</span></h4>
+        <p><span class="vi">Heatmap · badge Thực tế / Ước tính</span><span class="en" style="display:none">Heatmap · Actual / Estimated</span></p>
+      </div>
+      <div class="inv-card">
+        <h4>📐 Unit economics</h4>
+        <p><span class="vi">LN/đơn, DT/m², payback</span><span class="en" style="display:none">Profit/order, revenue/sqm</span></p>
+      </div>
+      <div class="inv-card">
+        <h4>👥 <span class="vi">Góc nhà đầu tư</span><span class="en" style="display:none">Investor lens</span></h4>
+        <p><span class="vi">Top 5 CH đóng góp LN</span><span class="en" style="display:none">Top 5 profit contributors</span></p>
+      </div>
+    </div>
+
+    <div class="timeline" style="margin-top:28px">
+      <div class="tl-item">
+        <h4><span class="vi">Nghiệm thu Phase 2</span><span class="en" style="display:none">Phase 2 acceptance</span></h4>
+        <p><span class="vi">Tổng DT/CP/LN khớp GĐ; 12 CH có Store P&amp;L; dashboard live; 7 CH CP ước tính được ghi nhận.</span><span class="en" style="display:none">Totals match director; 12-store P&amp;L; live dashboard; 7 stores marked estimated.</span></p>
+      </div>
+    </div>
+
+    <p style="margin-top:8px;font-size:.82rem;color:var(--txt2)">
+      <span class="vi"><strong>Phân biệt với Phase 1:</strong> BC tuần 3–4 Phase 1 = số <em>vận hành ERP 2026+</em>. Phase 2 = số <em>lịch sử 2023–25</em> cho gọi vốn.</span>
+      <span class="en" style="display:none"><strong>vs Phase 1:</strong> Phase 1 weeks 3–4 = <em>2026+ operational ERP</em>. Phase 2 = <em>2023–25 historical</em> fundraising story.</span>
+    </p>
+  </section>
+</main>
+
+<footer class="plan-footer"><a href="index.html">← pages/index.html</a></footer>
+<script src="plan.js"></script>
+</body>
+</html>

@@ -341,7 +341,7 @@ footer{background:var(--navy);color:rgba(255,255,255,.3);text-align:center;paddi
     </div>
     <div class="pain-card">
       <div class="pain-icon">📊</div>
-      <h4 class="vi">Odoo / ERP</h4><h4 class="en" style="display:none">Odoo / ERP</h4>
+      <h4 class="vi">ERP (rời rạc)</h4><h4 class="en" style="display:none">Siloed ERP</h4>
       <p class="vi">Kế toán chính xác nhưng phải nhập tay từ POS và Membership — mất thời gian, dễ sai.</p>
       <p class="en" style="display:none">Accurate accounting but requires manual entry from POS and Membership — time-consuming and error-prone.</p>
       <div class="pain-tag vi">Nhập tay thủ công</div><div class="pain-tag en" style="display:none">Manual entry</div>
@@ -371,8 +371,8 @@ footer{background:var(--navy);color:rgba(255,255,255,.3);text-align:center;paddi
   </div>
   <h2 class="section-title vi">REVA Platform — <span>lớp kết nối</span><br>không thay thế hệ thống cũ</h2>
   <h2 class="section-title en" style="display:none">REVA Platform — <span>the connection layer</span><br>that enhances what you have</h2>
-  <p class="section-sub vi">Không cần bỏ POS. Không cần đổi Odoo. REVA Platform kết nối tất cả lại, xử lý tự động và cho bạn bức tranh toàn cảnh về từng khách hàng.</p>
-  <p class="section-sub en" style="display:none">No need to replace your POS. No need to change Odoo. REVA Platform connects everything, automates processing, and gives you a complete view of every customer.</p>
+  <p class="section-sub vi">Không cần bỏ POS. Nâng cấp lên <strong>Linm ERP</strong> thống nhất kế toán–vận hành. REVA Platform kết nối POS, membership và báo cáo — một bức tranh đầy đủ về từng khách hàng.</p>
+  <p class="section-sub en" style="display:none">Keep your POS. Upgrade to unified <strong>Linm ERP</strong> for accounting and operations. REVA Platform connects POS, membership, and reporting — a complete view of every customer.</p>
   <div class="solution-diagram">
     <!-- Vietnamese diagram -->
     <svg class="vi sd-svg" viewBox="0 0 820 334" xmlns="http://www.w3.org/2000/svg">
@@ -975,13 +975,13 @@ footer{background:var(--navy);color:rgba(255,255,255,.3);text-align:center;paddi
   <div class="faq-list">
     <div class="faq-item">
       <div class="faq-q" onclick="toggleFaq(this)">
-        <span class="vi">REVA Platform có thay thế hệ thống POS hoặc Odoo hiện tại không?</span>
-        <span class="en" style="display:none">Does REVA Platform replace the current POS or Odoo?</span>
+        <span class="vi">REVA Platform có thay thế hệ thống POS hoặc ERP hiện tại không?</span>
+        <span class="en" style="display:none">Does REVA Platform replace the current POS or ERP?</span>
         <span class="faq-icon">+</span>
       </div>
       <div class="faq-a">
-        <span class="vi">Không. REVA Platform <strong>kết nối</strong> hệ thống hiện có, không thay thế. POS vẫn là nguồn gốc của giao dịch bán lẻ. Odoo vẫn là nơi kế toán chính thức. REVA chỉ làm cho chúng nói chuyện được với nhau.</span>
-        <span class="en" style="display:none">No. REVA Platform <strong>connects</strong> existing systems, doesn't replace them. POS remains the source of truth for retail transactions. Odoo remains the official accounting system. REVA just makes them talk to each other.</span>
+        <span class="vi">Không thay POS. <strong>Linm ERP</strong> là hệ thống kế toán và báo cáo chính thức; REVA Platform kết nối POS, membership và đồng bộ dữ liệu tự động.</span>
+        <span class="en" style="display:none">POS stays. <strong>Linm ERP</strong> is the official accounting and reporting system; REVA Platform connects POS, membership, and automates data sync.</span>
       </div>
     </div>
     <div class="faq-item">
@@ -1077,6 +1077,8 @@ footer{background:var(--navy);color:rgba(255,255,255,.3);text-align:center;paddi
   <div style="margin-top:40px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap">
     <button class="btn-primary vi" style="font-size:1rem;padding:16px 36px">💬 Để lại trao đổi trên nhóm</button>
     <button class="btn-primary en" style="display:none;font-size:1rem;padding:16px 36px">💬 Leave a message in the group</button>
+    <button class="btn-outline vi" onclick="window.open('pages/index.html','_blank')" style="font-size:1rem;padding:16px 36px">📊 Gap ERP &amp; Demo Kế toán</button>
+    <button class="btn-outline en" onclick="window.open('pages/index.html','_blank')" style="display:none;font-size:1rem;padding:16px 36px">📊 ERP Gap &amp; Accounting Demo</button>
     <button class="btn-outline vi" onclick="window.open('workflow-demo.html','_blank')" style="font-size:1rem;padding:16px 36px">📄 Xem Tài Liệu Kỹ Thuật</button>
     <button class="btn-outline en" onclick="window.open('workflow-demo.html','_blank')" style="display:none;font-size:1rem;padding:16px 36px">📄 View Technical Docs</button>
   </div>
@@ -1085,6 +1087,7 @@ footer{background:var(--navy);color:rgba(255,255,255,.3);text-align:center;paddi
 <footer>
   <p>REVA Platform · Foodmart / REVA Mart · Tháng 5/2026</p>
   <p style="margin-top:4px"><span class="vi">Tài liệu kỹ thuật chi tiết: thư mục docs/context/</span><span class="en" style="display:none">Full technical documentation: docs/context/ folder</span></p>
+  <p style="margin-top:6px"><a href="pages/index.html" style="color:#34d399">ERP Gap · Demo · Phase 1 · Phase 2</a></p>
 </footer>
 
 <script>
