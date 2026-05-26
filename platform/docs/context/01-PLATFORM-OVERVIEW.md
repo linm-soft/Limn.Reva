@@ -6,7 +6,7 @@ REVA is a retail platform for Foodmart / REVA Mart supermarket chains. It connec
 
 > REVA = Retail Core (membership · order · inventory · rules) + Event-Job Bus + Pluggable seasonal programs + Linm ERP
 
-**Audience:** Operations, marketing, investors (pitch via `Platform/index.html`).
+**Audience:** Operations, marketing, investors (pitch via `platform/index.html`).
 
 ## 2. Core Principles
 
