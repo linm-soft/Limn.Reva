@@ -1,4 +1,4 @@
-# Build on main → publish to gh-pages branch.
+# Static site → gh-pages branch. No marketplace actions (avoids codeload download failures).
 # Settings → Pages → Deploy from branch → gh-pages / (root)
 
 name: Deploy Pages
@@ -19,13 +19,17 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Prepare static site
+      - name: Checkout, build site, push gh-pages
         shell: bash
+        env:
+          DEPLOY_TOKEN: ${{ secrets.DEPLOY_TOKEN || github.token }}
         run: |
           set -euo pipefail
+
+          git clone --depth 1 --branch "${GITHUB_REF_NAME}" \
+            "https://x-access-token:${DEPLOY_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" repo
+          cd repo
+
           mkdir -p _site
           cp index.html workflow-demo.html _site/
           cp -r platform pages _site/
@@ -38,18 +42,11 @@ jobs:
           echo "Site files:"
           find _site -maxdepth 2 -type f | head -30
 
-      - name: Deploy to gh-pages branch
-        shell: bash
-        env:
-          # Optional PAT with repo scope; falls back to GITHUB_TOKEN from permissions above
-          DEPLOY_TOKEN: ${{ secrets.DEPLOY_TOKEN || github.token }}
-        run: |
-          set -euo pipefail
           cd _site
           git init -b gh-pages
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -A
-          git commit -m "deploy: ${{ github.sha }}"
+          git commit -m "deploy: ${GITHUB_SHA}"
           git remote add origin "https://x-access-token:${DEPLOY_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
           git push -f origin HEAD:gh-pages
