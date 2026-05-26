@@ -1,6 +1,5 @@
 # Build on main → publish to gh-pages branch.
-# Works with Settings → Pages → "Deploy from branch" → gh-pages / (root).
-# No "GitHub Actions" Pages source required (avoids queue / environment issues).
+# Settings → Pages → Deploy from branch → gh-pages / (root)
 
 name: Deploy Pages
 
@@ -28,9 +27,14 @@ jobs:
         run: |
           set -euo pipefail
           mkdir -p _site
-          cp index.html workflow-demo.html CNAME _site/
+          cp index.html workflow-demo.html _site/
           cp -r platform pages _site/
           touch _site/.nojekyll
+          if [ -f CNAME ]; then
+            cp CNAME _site/
+          else
+            echo "reva.linm-soft.com" > _site/CNAME
+          fi
           echo "Site files:"
           find _site -maxdepth 2 -type f | head -30
 
