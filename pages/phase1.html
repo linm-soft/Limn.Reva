@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>REVA — Phase 1: ERP + Web + Mobile</title>
+<link rel="stylesheet" href="plan.css">
+</head>
+<body>
+
+<nav class="plan-nav">
+  <a href="index.html" class="nav-logo"><div class="dot"></div> REVA ERP Plan</a>
+  <div class="nav-links">
+    <a href="index.html"><span class="vi">Tổng quan</span><span class="en" style="display:none">Overview</span></a>
+    <a href="gap.html"><span class="vi">Gap</span><span class="en" style="display:none">Gap</span></a>
+    <a href="demo.html"><span class="vi">Demo</span><span class="en" style="display:none">Demo</span></a>
+    <a href="phase1.html" class="active"><span class="vi">Phase 1</span><span class="en" style="display:none">Phase 1</span></a>
+    <a href="phase2.html"><span class="vi">Phase 2</span><span class="en" style="display:none">Phase 2</span></a>
+  </div>
+  <div class="nav-right">
+    <a href="index.html" class="nav-back">← <span class="vi">Tổng quan</span><span class="en" style="display:none">Overview</span></a>
+    <button class="lang-btn active" onclick="setLang('vi')">VI</button>
+    <button class="lang-btn" onclick="setLang('en')">EN</button>
+  </div>
+</nav>
+
+<div class="hero compact">
+  <div class="hero-badge"><span class="vi">3 · Phase 1 — Vận hành song song</span><span class="en" style="display:none">3 · Phase 1 — Parallel delivery</span></div>
+  <h1 class="vi">ERP <span>+ Web App</span> + Mobile</h1>
+  <h1 class="en" style="display:none">ERP <span>+ Web App</span> + Mobile</h1>
+  <p class="vi"><strong>ERP:</strong> base 2 tuần + báo cáo gọi vốn 2 tuần. <strong>Web &amp; Mobile:</strong> 60 ngày song song — membership, đặt/mua hàng, landing Bữa cơm nhà.</p>
+  <p class="en" style="display:none"><strong>ERP:</strong> 2w base + 2w fundraising reports. <strong>Web &amp; Mobile:</strong> 60 days parallel — membership, orders, Home Meal landing.</p>
+</div>
+
+<main>
+  <section class="page-section">
+    <div class="contract-box">
+      <h3><span class="vi">Mục tiêu Phase 1 (tổng hợp)</span><span class="en" style="display:none">Phase 1 objectives</span></h3>
+      <ul>
+        <li><span class="vi"><strong>Vận hành ERP</strong> — import POS từ <strong>01/01/2026</strong>, multi-tenant, kết ca, COA REVA (theo HĐ khách)</span><span class="en" style="display:none"><strong>ERP operations</strong> — POS from <strong>01 Jan 2026</strong>, multi-tenant, closing, REVA COA</span></li>
+        <li><span class="vi"><strong>Báo cáo ERP gọi vốn</strong> — số liệu vận hành thực tế trên ERP (2 tuần sau base)</span><span class="en" style="display:none"><strong>ERP fundraising reports</strong> — operational data from ERP (2 weeks after base)</span></li>
+        <li><span class="vi"><strong>Web App end-user</strong> — kiểm tra số dư membership, đặt hàng, mua hàng; static page event <em>Bữa cơm nhà</em></span><span class="en" style="display:none"><strong>End-user Web</strong> — membership balance, order, purchase; <em>Home Meal</em> static landing</span></li>
+        <li><span class="vi"><strong>Android + iOS</strong> — cùng scope Web App, phát triển song song 60 ngày</span><span class="en" style="display:none"><strong>Android + iOS</strong> — same scope as Web, 60 days parallel</span></li>
+      </ul>
+      <p class="contract-ref vi">📎 HĐ POS: chỉ import ≥ 01/01/2026 — không migration lịch sử trong P1 → <a href="phase2.html">Phase 2</a> dùng data 2023–25 sẵn có.</p>
+      <p class="contract-ref en" style="display:none">📎 Contract: POS import from 01/01/2026 only — historical data in <a href="phase2.html">Phase 2</a>.</p>
+    </div>
+  </section>
+
+  <section class="page-section">
+    <div class="section-tag amber"><span class="vi">Luồng A · ERP</span><span class="en" style="display:none">Track A · ERP</span></div>
+    <h2 class="section-title vi">ERP — <span>4 tuần</span> (2 + 2)</h2>
+    <h2 class="section-title en" style="display:none">ERP — <span>4 weeks</span> (2 + 2)</h2>
+
+    <div class="sprint-row">
+      <div class="sprint-box">
+        <h3><span class="vi">Tuần 1–2 · ERP Base</span><span class="en" style="display:none">Weeks 1–2 · ERP base</span></h3>
+        <div class="week"><span class="vi">Vận hành &amp; thiết lập nền</span><span class="en" style="display:none">Operations &amp; foundation</span></div>
+        <ul class="task-list">
+          <li><span class="task-id">P1.1</span><span class="vi">Đăng ký FM02–FM09 + HO làm <strong>đơn vị cơ sở</strong> (<code>companyId</code>)</span><span class="en" style="display:none">Register stores as company tenants</span></li>
+          <li><span class="task-id">P1.2</span><span class="vi">Mapping 15 kênh TT → TK 111/113/312</span><span class="en" style="display:none">15 payment channels → GL</span></li>
+          <li><span class="task-id">P1.3</span><span class="vi">Import 150+ TK REVA</span><span class="en" style="display:none">Import REVA COA</span></li>
+          <li><span class="task-id">P1.4</span><span class="vi"><strong>Phiếu Kết Ca</strong> — form, API, bút toán</span><span class="en" style="display:none"><strong>Store closing</strong> voucher</span></li>
+          <li><span class="task-id">POS</span><span class="vi">Import &amp; đối soát POS <strong>≥ 01/01/2026</strong> (file/batch → API khi sẵn)</span><span class="en" style="display:none">Import &amp; reconcile POS from 01/01/2026</span></li>
+        </ul>
+      </div>
+      <div class="sprint-box">
+        <h3><span class="vi">Tuần 3–4 · BC gọi vốn (ERP)</span><span class="en" style="display:none">Weeks 3–4 · Fundraising reports (ERP)</span></h3>
+        <div class="week"><span class="vi">Báo cáo từ số vận hành ERP</span><span class="en" style="display:none">Reports from live ERP data</span></div>
+        <ul class="task-list">
+          <li><span class="task-id">P1.5</span><span class="vi">PT <em>Nạp Ví Foodmart</em> → Có 312</span><span class="en" style="display:none">Wallet top-up receipt type</span></li>
+          <li><span class="task-id">P1.6</span><span class="vi">GRIR 3319100001 + BC treo</span><span class="en" style="display:none">GRIR + open items report</span></li>
+          <li><span class="task-id">BC</span><span class="vi">P&amp;L theo <code>companyId</code>, đối soát cuối ca, DT theo kênh (số ERP thực)</span><span class="en" style="display:none">P&amp;L per tenant, shift reconcile, channel revenue</span></li>
+          <li><span class="task-id">GV</span><span class="vi">Dashboard / export slide <strong>gọi vốn</strong> từ ERP (khác Phase 2 lịch sử 2023–25)</span><span class="en" style="display:none">Fundraising deck from operational ERP data</span></li>
+          <li><span class="task-id">UAT</span><span class="vi">Kết ca, nạp ví, GRIR, switch đơn vị cơ sở</span><span class="en" style="display:none">UAT: closing, wallet, GRIR, company switch</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <table class="deliver-table" style="margin-top:24px">
+      <thead>
+        <tr>
+          <th>Deliverable</th>
+          <th><span class="vi">Mô tả</span><span class="en" style="display:none">Description</span></th>
+          <th><span class="vi">Phụ thuộc REVA</span><span class="en" style="display:none">REVA dependency</span></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td><span class="vi">Đơn vị cơ sở</span><span class="en" style="display:none">Tenants</span></td><td>FM02–FM09, HO</td><td><span class="vi">Mã + map user JWT</span><span class="en" style="display:none">Codes + JWT mapping</span></td></tr>
+        <tr><td>POS import</td><td><span class="vi">Bill, payment, DM từ 01/01/2026</span><span class="en" style="display:none">Bills, payments, catalogs</span></td><td><span class="vi">Export POS / API spec</span><span class="en" style="display:none">POS export / API spec</span></td></tr>
+        <tr><td><span class="vi">BC gọi vốn (ERP)</span><span class="en" style="display:none">ERP fundraising pack</span></td><td><span class="vi">Số vận hành 2026+ trên ERP</span><span class="en" style="display:none">2026+ operational figures</span></td><td><span class="vi">Xác nhận KPI trình GĐ</span><span class="en" style="display:none">Director KPI sign-off</span></td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="page-section panel-gray">
+      <div class="section-tag indigo"><span class="vi">Luồng B · End-user (song song 60 ngày)</span><span class="en" style="display:none">Track B · End-user (60 days parallel)</span></div>
+      <h2 class="section-title vi">Web App + <span>Android / iOS</span></h2>
+      <h2 class="section-title en" style="display:none">Web App + <span>Android / iOS</span></h2>
+      <p class="section-sub vi">Phát triển <strong>song song</strong> trong 60 ngày — cùng backlog tính năng; mobile focus app KH (không app nội bộ ERP).</p>
+      <p class="section-sub en" style="display:none"><strong>Parallel</strong> 60-day delivery — shared backlog; mobile = customer app only.</p>
+
+      <div class="track-grid three">
+        <div class="track-box blue">
+          <h3>🌐 Web App</h3>
+          <div class="dur">60 <span class="vi">ngày</span><span class="en" style="display:none">days</span></div>
+          <ul class="task-list">
+            <li><span class="task-id">W1</span><span class="vi">Đăng nhập / hồ sơ hội viên</span><span class="en" style="display:none">Login / member profile</span></li>
+            <li><span class="task-id">W2</span><span class="vi"><strong>Kiểm tra số dư membership</strong> (ví / điểm)</span><span class="en" style="display:none"><strong>Membership balance</strong></span></li>
+            <li><span class="task-id">W3</span><span class="vi"><strong>Đặt hàng</strong> — giỏ, thanh toán, trạng thái đơn</span><span class="en" style="display:none"><strong>Ordering</strong> — cart, checkout, status</span></li>
+            <li><span class="task-id">W4</span><span class="vi"><strong>Mua hàng</strong> từ event / catalog (Bữa cơm nhà)</span><span class="en" style="display:none"><strong>Purchase</strong> from event catalog</span></li>
+            <li><span class="task-id">W5</span><span class="vi">Lịch sử giao dịch, thông báo</span><span class="en" style="display:none">Transaction history, notifications</span></li>
+          </ul>
+        </div>
+        <div class="track-box indigo">
+          <h3>📱 Android</h3>
+          <div class="dur">60 <span class="vi">ngày · song song</span><span class="en" style="display:none">days · parallel</span></div>
+          <ul class="task-list">
+            <li><span class="vi">Cùng scope Web — native UX</span><span class="en" style="display:none">Same scope as Web — native UX</span></li>
+            <li><span class="vi">Push notification (đơn hàng, khuyến mãi)</span><span class="en" style="display:none">Push (orders, promos)</span></li>
+            <li><span class="vi">Deep link từ landing Bữa cơm nhà</span><span class="en" style="display:none">Deep link from Home Meal landing</span></li>
+          </ul>
+        </div>
+        <div class="track-box indigo">
+          <h3>🍎 iOS</h3>
+          <div class="dur">60 <span class="vi">ngày · song song</span><span class="en" style="display:none">days · parallel</span></div>
+          <ul class="task-list">
+            <li><span class="vi">Parity với Android</span><span class="en" style="display:none">Parity with Android</span></li>
+            <li><span class="vi">TestFlight / App Store prep (nếu publish)</span><span class="en" style="display:none">TestFlight / store prep</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="contract-box" style="border-left-color:var(--indigo);margin-top:28px">
+        <h3>🍽️ <span class="vi">Event "Bữa cơm nhà" — Static page quảng cáo</span><span class="en" style="display:none">"Home Meal" event — marketing static page</span></h3>
+        <ul>
+          <li><span class="vi">Trang tĩnh (SSG/HTML) — SEO, không cần đăng nhập để xem</span><span class="en" style="display:none">Static/SSG page — SEO, no login to view</span></li>
+          <li><span class="vi">Nội dung: menu, giá, CTA → Web App / store mobile (đặt/mua)</span><span class="en" style="display:none">Menu, pricing, CTA → Web App / mobile store</span></li>
+          <li><span class="vi">UTM / campaign tracking cho quảng cáo</span><span class="en" style="display:none">UTM / campaign tracking</span></li>
+          <li><span class="vi">Không thay ERP — đơn hàng đồng bộ qua API bán hàng / membership backend</span><span class="en" style="display:none">Orders sync via sales/membership API — not ERP UI</span></li>
+        </ul>
+      </div>
+
+      <p class="dep-list vi"><strong>Phụ thuộc:</strong> API membership &amp; đơn hàng (BFF) · tích hợp thanh toán · nội dung/marketing Bữa cơm nhà từ REVA.</p>
+      <p class="dep-list en" style="display:none"><strong>Dependencies:</strong> membership &amp; order APIs (BFF) · payment integration · Home Meal marketing content from REVA.</p>
+  </section>
+
+  <section class="page-section">
+    <div class="section-tag"><span class="vi">Gợi ý phân bổ 60 ngày (Web/Mobile)</span><span class="en" style="display:none">60-day Web/Mobile breakdown</span></div>
+    <div class="timeline">
+      <div class="tl-item">
+        <h4><span class="vi">Ngày 1–15 · Foundation</span><span class="en" style="display:none">Days 1–15 · Foundation</span></h4>
+        <p><span class="vi">Auth, API contract, design system, static page Bữa cơm nhà v1.</span><span class="en" style="display:none">Auth, API contract, design system, Home Meal landing v1.</span></p>
+      </div>
+      <div class="tl-item">
+        <h4><span class="vi">Ngày 16–35 · Core features</span><span class="en" style="display:none">Days 16–35 · Core features</span></h4>
+        <p><span class="vi">Số dư membership, catalog, giỏ hàng — Web + Mobile alpha.</span><span class="en" style="display:none">Membership balance, catalog, cart — Web + Mobile alpha.</span></p>
+      </div>
+      <div class="tl-item">
+        <h4><span class="vi">Ngày 36–50 · Checkout &amp; event</span><span class="en" style="display:none">Days 36–50 · Checkout &amp; event</span></h4>
+        <p><span class="vi">Thanh toán, đặt/mua từ Bữa cơm nhà, deep link mobile.</span><span class="en" style="display:none">Payment, Home Meal purchase flow, mobile deep links.</span></p>
+      </div>
+      <div class="tl-item">
+        <h4><span class="vi">Ngày 51–60 · UAT &amp; release</span><span class="en" style="display:none">Days 51–60 · UAT &amp; release</span></h4>
+        <p><span class="vi">UAT end-user, fix, deploy Web + submit mobile (nếu store).</span><span class="en" style="display:none">End-user UAT, deploy Web + mobile store submit.</span></p>
+      </div>
+    </div>
+
+    <div class="contract-box" style="border-left-color:var(--blue);margin-top:24px">
+      <h3><span class="vi">API POS (HĐ) — cuối Phase 1 ERP</span><span class="en" style="display:none">POS API (contract) — end of ERP Phase 1</span></h3>
+      <p style="font-size:.85rem;color:var(--txt2)"><span class="vi"><code>POST /api/v1/pos/sales-sync</code> — đồng bộ bill, payment sau go-live. Giai đoạn đầu: import file/batch.</span><span class="en" style="display:none">POS sales-sync API after go-live; early phase: file/batch import.</span></p>
+    </div>
+
+    <p style="margin-top:24px">
+      <a href="phase2.html" class="btn-primary" style="display:inline-block"><span class="vi">Tiếp theo: Phase 2 (BC 2023–25) →</span><span class="en" style="display:none">Next: Phase 2 →</span></a>
+    </p>
+  </section>
+</main>
+
+<footer class="plan-footer"><a href="index.html">← pages/index.html</a></footer>
+<script src="plan.js"></script>
+</body>
+</html>

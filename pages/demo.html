@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>REVA ERP — Kế hoạch Demo</title>
+<link rel="stylesheet" href="plan.css">
+</head>
+<body>
+
+<nav class="plan-nav">
+  <a href="index.html" class="nav-logo"><div class="dot"></div> REVA ERP Plan</a>
+  <div class="nav-links">
+    <a href="index.html"><span class="vi">Tổng quan</span><span class="en" style="display:none">Overview</span></a>
+    <a href="gap.html"><span class="vi">Gap</span><span class="en" style="display:none">Gap</span></a>
+    <a href="demo.html" class="active"><span class="vi">Demo</span><span class="en" style="display:none">Demo</span></a>
+    <a href="phase1.html"><span class="vi">Phase 1</span><span class="en" style="display:none">Phase 1</span></a>
+    <a href="phase2.html"><span class="vi">Phase 2</span><span class="en" style="display:none">Phase 2</span></a>
+  </div>
+  <div class="nav-right">
+    <a href="index.html" class="nav-back">← <span class="vi">Tổng quan</span><span class="en" style="display:none">Overview</span></a>
+    <button class="lang-btn active" onclick="setLang('vi')">VI</button>
+    <button class="lang-btn" onclick="setLang('en')">EN</button>
+  </div>
+</nav>
+
+<div class="hero compact">
+  <div class="hero-badge"><span class="vi">2 · Demo ERP</span><span class="en" style="display:none">2 · ERP demo</span></div>
+  <h1 class="vi">Xem <span>chứng từ</span> &amp; trải nghiệm vận hành mượt</h1>
+  <h1 class="en" style="display:none">See <span>vouchers</span> &amp; smooth operations</h1>
+  <p class="vi">Buổi demo <strong>không phải go-live</strong> — không cam kết đủ Phase 1/2 trong một session.</p>
+  <p class="en" style="display:none">Demo is <strong>not go-live</strong> — does not commit to full Phase 1/2 scope.</p>
+</div>
+
+<main>
+  <section class="page-section">
+    <div class="demo-purpose">
+      <h3>🎯 <span class="vi">Mục đích buổi Demo</span><span class="en" style="display:none">Demo purpose</span></h3>
+      <p class="vi">Trình diễn tính năng cơ bản trên Linm ERP (~138 trang): vận hành ổn định, luồng chứng từ rõ, <strong>giao diện mượt</strong> (list, form, filter, phê duyệt).</p>
+      <p class="en" style="display:none">Show existing Linm ERP features (~138 pages): stable ops, clear flows, <strong>smooth UI</strong>.</p>
+      <div class="ui-checklist">
+        <div class="ui-check"><span>✓</span><span class="vi">Mở / tạo / sửa / duyệt chứng từ mẫu (PT, PC, PNK, DDMH…)</span><span class="en" style="display:none">Open / create / edit / approve sample vouchers</span></div>
+        <div class="ui-check"><span>✓</span><span class="vi">Tab, filter, phân trang — không lag</span><span class="en" style="display:none">Tabs, filters, pagination — no lag</span></div>
+        <div class="ui-check"><span>✓</span><span class="vi">In B01, sổ cái, NXT (dữ liệu mẫu)</span><span class="en" style="display:none">Print B01, GL, stock (sample data)</span></div>
+        <div class="ui-check"><span>✓</span><span class="vi">Đổi đơn vị cơ sở — scope dữ liệu đổi</span><span class="en" style="display:none">Switch company tenant</span></div>
+      </div>
+    </div>
+
+    <p class="section-sub vi"><strong>Có thể show:</strong> kế toán, kho, mua hàng, báo cáo pháp lý, multi-tenant. <strong>Không demo:</strong> import POS 2026, Web/Mobile end-user, dashboard gọi vốn (Phase 1–2).</p>
+    <p class="section-sub en" style="display:none"><strong>Can show:</strong> finance, warehouse, procurement, statutory reports, multi-tenancy. <strong>Not in demo:</strong> 2026 POS import, end-user apps, fundraising dashboard.</p>
+
+    <div class="demo-grid">
+      <div class="demo-card">
+        <h4>📒 <span class="vi">Kế toán — Chứng từ</span><span class="en" style="display:none">Finance — Vouchers</span></h4>
+        <ul>
+          <li><span class="vi">Phiếu Thu / Phiếu Chi</span><span class="en" style="display:none">Receipt / Payment</span></li>
+          <li><span class="vi">Nhật ký chung, Tạm ứng</span><span class="en" style="display:none">Journal, Advances</span></li>
+          <li><span class="vi">Hóa đơn mua DV, Phiếu nhập mua</span><span class="en" style="display:none">Service invoice, GRN</span></li>
+          <li><span class="vi">Phân bổ, Kết chuyển, Giá vốn</span><span class="en" style="display:none">Allocation, close, COGS</span></li>
+        </ul>
+        <div class="demo-route">/kt/phieu-thu · /kt/phieu-chi</div>
+      </div>
+      <div class="demo-card">
+        <h4>📊 <span class="vi">Báo cáo tài chính</span><span class="en" style="display:none">Financial reports</span></h4>
+        <ul>
+          <li>B01-DN · B02-DN · B03-DN</li>
+          <li><span class="vi">Sổ cái, Nhật ký CT, CĐPS</span><span class="en" style="display:none">GL, voucher journal, trial balance</span></li>
+          <li><span class="vi">Bảng kê VAT, BC doanh thu/CP</span><span class="en" style="display:none">VAT listing, revenue/expense</span></li>
+        </ul>
+        <div class="demo-route">/baocao/b01-dn</div>
+      </div>
+      <div class="demo-card">
+        <h4>📦 <span class="vi">Kho &amp; Mua hàng</span><span class="en" style="display:none">Warehouse &amp; procurement</span></h4>
+        <ul>
+          <li>PNK / PXK · <span class="vi">Kiểm kho</span><span class="en" style="display:none">Stock count</span></li>
+          <li>YCMH → DDMH → PNH → HDDT</li>
+          <li><span class="vi">BC NXT, Tồn kho</span><span class="en" style="display:none">Stock reports</span></li>
+        </ul>
+        <div class="demo-route">/kho/pnk · /mh/ddmh</div>
+      </div>
+      <div class="demo-card">
+        <h4>🏢 <span class="vi">Multi-tenant</span><span class="en" style="display:none">Multi-tenancy</span></h4>
+        <ul>
+          <li><code>DonViCoSoPage</code></li>
+          <li>JWT <code>company_id</code></li>
+          <li><code>SwitchCompanyModal</code></li>
+        </ul>
+        <div class="demo-route">/dm/don-vi-co-so</div>
+      </div>
+      <div class="demo-card">
+        <h4>🛒 <span class="vi">Bán hàng &amp; Master</span><span class="en" style="display:none">Sales &amp; master</span></h4>
+        <ul>
+          <li><span class="vi">Đơn hàng, HĐ bán, Trả hàng</span><span class="en" style="display:none">Orders, invoices, returns</span></li>
+          <li><span class="vi">DM vật tư, đối tác, TK</span><span class="en" style="display:none">Items, partners, accounts</span></li>
+        </ul>
+        <div class="demo-route">/bh/don-hang</div>
+      </div>
+      <div class="demo-card warn">
+        <h4>⚠️ <span class="vi">Không demo (hoặc disclaimer)</span><span class="en" style="display:none">Do not demo</span></h4>
+        <ul>
+          <li><span class="vi">Phiếu Kết Ca, P&amp;L xuyên tenant</span><span class="en" style="display:none">Store closing, cross-tenant P&amp;L</span></li>
+          <li><span class="vi">15 kênh TT tự động</span><span class="en" style="display:none">15 payment channels</span></li>
+          <li><span class="vi">App Web/Mobile KH, Bữa cơm nhà</span><span class="en" style="display:none">End-user Web/Mobile, Home Meal</span></li>
+          <li><span class="vi">Dashboard KPI / Loyalty</span><span class="en" style="display:none">KPI dashboard / Loyalty</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <h3 style="margin-top:36px;font-size:1rem;font-weight:800;color:var(--navy)">
+      <span class="vi">Kịch bản đề xuất (45–60 phút)</span>
+      <span class="en" style="display:none">Suggested script (45–60 min)</span>
+    </h3>
+    <div class="timeline">
+      <div class="tl-item">
+        <h4><span class="vi">1. Điều hướng &amp; danh mục (10′)</span><span class="en" style="display:none">1. Navigation &amp; catalogs (10′)</span></h4>
+        <p><span class="vi">Menu ERP, list Mã–Tên, tìm/lọc/phân trang.</span><span class="en" style="display:none">ERP menu, code-name lists, search/filter.</span></p>
+      </div>
+      <div class="tl-item">
+        <h4><span class="vi">2. Luồng chứng từ (25′)</span><span class="en" style="display:none">2. Voucher flows (25′)</span></h4>
+        <p><span class="vi">PT → PC → Sổ cái; hoặc YCMH → DDMH → PNK.</span><span class="en" style="display:none">Receipt → payment → GL; or PR → PO → GRN.</span></p>
+      </div>
+      <div class="tl-item">
+        <h4><span class="vi">3. Báo cáo &amp; in (10′)</span><span class="en" style="display:none">3. Reports (10′)</span></h4>
+        <p><span class="vi">B01 / NXT / công nợ.</span><span class="en" style="display:none">B01 / stock / AR-AP.</span></p>
+      </div>
+      <div class="tl-item">
+        <h4><span class="vi">4. Roadmap (10′) — slide</span><span class="en" style="display:none">4. Roadmap (10′) — slides</span></h4>
+        <p><span class="vi">Giới thiệu <a href="phase1.html">Phase 1</a> (ERP + Web/Mobile) và <a href="phase2.html">Phase 2</a> — tách khỏi demo live.</span><span class="en" style="display:none">Intro <a href="phase1.html">Phase 1</a> and <a href="phase2.html">Phase 2</a> — separate from live demo.</span></p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="plan-footer"><a href="index.html">← pages/index.html</a></footer>
+<script src="plan.js"></script>
+</body>
+</html>
